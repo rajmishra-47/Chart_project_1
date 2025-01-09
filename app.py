@@ -5,7 +5,7 @@ import pandas as pd
 
 options=[]
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Choose a   .xlsx file to start analysis",type=["xlsx", "xls"])
 
 if uploaded_file:
     file=pd.read_excel(uploaded_file)
@@ -19,14 +19,7 @@ if uploaded_file:
     "Selcet values for Y ",Names
     )
 
-    # chartOption=st.selectbox(
-    # "How would you like the plot to be?",
-    # ("bar", "plot", "pie","hist"),
-    # index=None,
-    # placeholder="Select type of chart to be plot...",
-    # )
-    
-     
+  
     if st.button("Plot"):
         if optionsX and optionsY:
             fig, ax = plt.subplots()
